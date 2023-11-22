@@ -1,0 +1,38 @@
+		INSTALLATION AND IMPLEMENTATION OF TripletRes
+(Copyright 2020 by Zhang Lab, University of Michigan, All rights reserved)
+
+1. What is TripletRes?
+    TripletRes is a program for protein contact-map prediction by coupling a triplet of coevolutionary analysis 
+    features with fully Residual neurl networks.
+   1.1 Version	
+	This version is newly trained on 26,151 PDB structures.
+
+2. How to install the TripletRes?
+
+    1) Prerequisites
+        Python3 with numpy and scipy installed
+        pytorch 1.0 or higher(https://pytorch.org/)
+        Anaconda is recommended to set up python environments
+    2) There is an executable file under 'bin' path, Maybe you also need set 
+        executable permission to the bin file.
+	3) Install CCMpred(https://github.com/soedinglab/CCMpred) and put executable ccmpred file to bin/ccmpred
+
+3. Bug report:
+    Please visit https://zhanglab.ccmb.med.umich.edu/bbs/?q=forum/2
+
+4. How to run the TripletRes?
+	python TripletRes.py [msa_file] [outfile]
+		msa_file: Multiple Sequence Alignment file
+		outfile:  Output file, each line in this format: [position1 position2 score]
+		where position index start from 1 [NOT 0]
+
+5. Example
+	You can test by fowllowing commands:
+		' python TripletRes.py test/seq.aln test/seq.out '
+	It will generate 2 files:
+		' seq.out.weight ': Weights for each sequence in msa, you can just ignore it.
+		' seq.out '       : Output file 
+
+
+Reference
+Deducing high-accuracy protein contact-maps from a triplet of coevolutionary matrices through deep residual convolutional networks. in preparation.
